@@ -1,5 +1,4 @@
-# Batch-Master 
-### By Ayyoub Jadoo
+# Batch-Master
 
 A light library which contains useful helpers for batching any process (executing tasks in batches)
 
@@ -29,3 +28,5 @@ A light library which contains useful helpers for batching any process (executin
             Console.WriteLine(pResult);
 
             Console.ReadLine();
+
+### Made with love by Ayyoub Jadoo
