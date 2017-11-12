@@ -12,15 +12,15 @@ namespace BatchMaster.Test
         {
             List<int> myIntList = new List<int>();
 
-            for (int i = 0; i > 1000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 myIntList.Add(i + 1);
             }
 
             var config = new ExecutionConfig
             {
-                BatchSize = 100,
-                BatchDelayInMS = 500 //this property will be ignored in the Parallel mode
+                BatchSize = 30,
+                BatchDelayInMS = 200 //this property will be ignored in the Parallel mode
             };
 
             Console.WriteLine("Normal:");
@@ -38,7 +38,7 @@ namespace BatchMaster.Test
 
         private static void DoSomethingWithMyBatch(List<int> list)
         {
-            list.ForEach(i => i++);
+            list.ForEach(i => Console.WriteLine(++i));
         }
     }
 }
