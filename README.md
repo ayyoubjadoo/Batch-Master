@@ -1,5 +1,4 @@
-# Batch-Master
-By Ayyoub Jadoo
+# Batch-Master ### By Ayyoub Jadoo
 
 A light library which contains useful helpers for batching any process (executing tasks in batches)
 
