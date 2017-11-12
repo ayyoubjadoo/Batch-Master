@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,32 +12,33 @@ namespace BatchMaster.Test
         {
             List<int> myIntList = new List<int>();
 
-            for (int i = 100; i > -5; i--)
+            for (int i = 0; i > 1000; i++)
             {
                 myIntList.Add(i + 1);
             }
 
-            var config = new ExecutionConfig {
-                BatchSize = 5,
-                BatchDelayInMS = 0
+            var config = new ExecutionConfig
+            {
+                BatchSize = 100,
+                BatchDelayInMS = 500 //this property will be ignored in the Parallel mode
             };
 
             Console.WriteLine("Normal:");
-            var result = BatchMaster.Execute(myIntList, (batch) => { ProcessMyList(batch.ToList()); }, config);
+            var result = BatchMaster.Execute(myIntList, (batch) => { DoSomethingWithMyBatch(batch.ToList()); }, config);
             Console.WriteLine(result);
 
             Console.WriteLine("-------------------------------------");
 
             Console.WriteLine("Parallel:");
-            var pResult = BatchMaster.ExecuteParallel(myIntList, (batch) => { ProcessMyList(batch.ToList()); }, config);
+            var pResult = BatchMaster.ExecuteParallel(myIntList, (batch) => { DoSomethingWithMyBatch(batch.ToList()); }, config);
             Console.WriteLine(pResult);
 
             Console.ReadLine();
         }
 
-        private static void ProcessMyList(List<int> list)
+        private static void DoSomethingWithMyBatch(List<int> list)
         {
-            list.ForEach(i => { int x = 100 / i; });
+            list.ForEach(i => i++);
         }
     }
 }
