@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace BatchMaster
         {
             ExecutionResult execResult = null;
 
-            if (inputList != null && actionToApply != null && execConfig != null)
+            if (inputList != null && inputList.Any() && actionToApply != null && execConfig != null)
             {
                 var generalStopWatch = new Stopwatch();
 
@@ -81,7 +81,7 @@ namespace BatchMaster
         {
             ExecutionResult execResult = null;
 
-            if (inputList != null && actionToApply != null && execConfig != null)
+            if (inputList != null && inputList.Any() && actionToApply != null && execConfig != null)
             {
                 var generalStopWatch = new Stopwatch();
 
