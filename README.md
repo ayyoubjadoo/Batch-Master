@@ -7,14 +7,15 @@ A light library which contains useful helpers for batching any process (executin
 
             List<int> myIntList = new List<int>();
 
-            for (int i = 0; i > 1000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 myIntList.Add(i + 1);
             }
 
-            var config = new ExecutionConfig {
-                BatchSize = 5,
-                BatchDelayInMS = 500 //this property will be ignored in the Parallel mode
+            var config = new ExecutionConfig
+            {
+                BatchSize = 30,
+                BatchDelayInMS = 200 //this property will be ignored in the Parallel mode
             };
 
             Console.WriteLine("Normal:");
