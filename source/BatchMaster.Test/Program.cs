@@ -12,7 +12,7 @@ namespace BatchMaster.Test
         {
             List<int> myIntList = new List<int>();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 150; i++)
             {
                 myIntList.Add(i + 1);
             }
